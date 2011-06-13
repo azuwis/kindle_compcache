@@ -1,0 +1,2 @@
+0x56b63670	lzo1x_1_compress	/home/azuwis/kindle/compcache-0.5.4/sub-projects/compression/lzo-kmod/lzo1x_compress	EXPORT_SYMBOL_GPL
+0xf30fda27	lzo1x_decompress_safe	/home/azuwis/kindle/compcache-0.5.4/sub-projects/compression/lzo-kmod/lzo1x_decompress	EXPORT_SYMBOL_GPL
