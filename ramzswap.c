@@ -20,7 +20,7 @@
 #include <linux/device.h>
 #include <linux/genhd.h>
 #include <linux/highmem.h>
-#include <linux/lzo.h>
+#include <lzo.h>
 #include <linux/mutex.h>
 #include <linux/proc_fs.h>
 #include <linux/string.h>

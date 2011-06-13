@@ -23,6 +23,8 @@
 #include "xvmalloc.h"
 #include "xvmalloc_int.h"
 
+#define BIT(nr)                 (1UL << (nr))
+
 static void stat_inc(u64 *value)
 {
 	*value = *value + 1;
