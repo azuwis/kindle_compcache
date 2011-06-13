@@ -1,0 +1,22 @@
+#! /bin/sh
+# /etc/init.d/compcache
+case "$1" in
+  start)
+    echo "Starting compcache "
+    compcache_dir=/mnt/us/compcache
+    insmod ${compcache_dir}/lzo1x_compress.ko
+    insmod ${compcache_dir}/lzo1x_decompress.ko
+    insmod ${compcache_dir}/xvmalloc.ko
+    insmod ${compcache_dir}/ramzswap.ko
+    echo 3 > /proc/sys/vm/drop_caches
+    echo 30 > /proc/sys/vm/swappiness
+    ${compcache_dir}/busybox swapon /dev/ramzswap0
+    ;;
+  stop)
+    ;;
+  *)
+    echo "Usage: /etc/init.d/compcache {start|stop}"
+    exit 1
+    ;;
+esac
+exit 0

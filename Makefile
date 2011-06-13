@@ -17,10 +17,11 @@ all:
 	make -C $(KERNEL_BUILD_PATH) M=$(PWD)/$(XVM) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) modules
 	make -C $(KERNEL_BUILD_PATH) M=$(PWD)/$(LZO) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) modules
 	make -C $(KERNEL_BUILD_PATH) M=$(PWD) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) modules
-	@ln -sf $(XVM)/xvmalloc.ko
+	cp $(XVM)/xvmalloc.ko $(LZO)/lzo1x_compress.ko $(LZO)/lzo1x_decompress.ko ramzswap.ko compcache/
 
 clean:
 	make -C $(KERNEL_BUILD_PATH) M=$(PWD) clean
 	make -C $(KERNEL_BUILD_PATH) M=$(PWD)/$(XVM) clean
 	make -C $(KERNEL_BUILD_PATH) M=$(PWD)/$(LZO) clean
 	@rm -rf *.ko
+	@rm -rf compcache/*.ko
